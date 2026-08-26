@@ -14,9 +14,8 @@ a deviation
 the spread has moved from its mean, returning buy and sell signals
 - Refactored pipeline into reusable functions
 - Sub-period stability check 
-
-Future workpath: 
 - Simple backtest using z-score thresholds
+Future workpath:
 - Transaction costs / slippage
 - Walk-forward validation (train on early period, test on unseen later period)
 - Performance metrics: Sharpe ratio, max drawdown
