@@ -12,11 +12,11 @@ then is passed through an ADF test to determine cointegration to confidence valu
 a deviation
 - Rolling z-score: using a predetermined timeframe and the spread, a z-score is calculated for the spread. This data point reveals how many standard deviations
 the spread has moved from its mean, returning buy and sell signals
-- Refactored pipeline into reusable functions 
-
-Future workpath: 
-- Sub-period stability check (does cointegration hold across sub-samples?)
+- Refactored pipeline into reusable functions
+- Sub-period stability check 
 - Simple backtest using z-score thresholds
+
+Future workpath:
 - Transaction costs / slippage
 - Walk-forward validation (train on early period, test on unseen later period)
 - Performance metrics: Sharpe ratio, max drawdown
@@ -39,5 +39,4 @@ Future workpath:
 - Backtest, walk-forward, Sharpe/drawdown for static vs. Kalman, pairs vs. basket
 - Benchmark against buy-and-hold
 - Structural break / regime stability analysis
-- Final README with full methodology, results table, and limitations
-- `requirements.txt`, basic `pytest` coverage, docstring
+- 
