@@ -15,13 +15,19 @@ the spread has moved from its mean, returning buy and sell signals
 - Refactored pipeline into reusable functions
 - Sub-period stability check 
 - Simple backtest using z-score thresholds
+- Transaction costs / slippage
+- Performance metrics: Sharpe ratio, max drawdown
 
 Future workpath:
-- Transaction costs / slippage
 - Walk-forward validation (train on early period, test on unseen later period)
-- Performance metrics: Sharpe ratio, max drawdown
 - Synthetic OU sanity check (recover known parameters from simulated data)
 - Deflated Sharpe Ratio
+ ### Dynamic hedge ratio (Kalman filter)
+- Formulate as a state-space model (hedge ratio as latent state)
+- Initial implementation via `pykalman`
+- Tune process/observation noise covariances
+- Compare static (OLS) vs. dynamic (Kalman) hedge ratio over time
+- Manual NumPy reimplementation of the Kalman filter
 ### Multi-asset basket (Johansen test)
 - Select a 3–5 asset basket with economic justification (e.g. precious metals: GLD/SLV/PPLT)
 - Pairwise correlation prescreening
@@ -29,12 +35,7 @@ Future workpath:
 - Identify and validate the dominant cointegration vector
 - ADF test on the resulting basket spread
 - Rolling Johansen check across sub-periods
-### Dynamic hedge ratio (Kalman filter)
-- Formulate as a state-space model (hedge ratio as latent state)
-- Initial implementation via `pykalman`
-- Tune process/observation noise covariances
-- Compare static (OLS) vs. dynamic (Kalman) hedge ratio over time
-- Manual NumPy reimplementation of the Kalman filter
+
 ### Final comparison and writeup
 - Backtest, walk-forward, Sharpe/drawdown for static vs. Kalman, pairs vs. basket
 - Benchmark against buy-and-hold
